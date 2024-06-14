@@ -28,14 +28,14 @@ def pgp(vl,i):
     elif i<2 : return 0.1*vl
     else: return vl
 
-#Questão 3
+#Questão 3:
 #Para calcular o preço a ser pago pelo aluguel do carro em função da distância e dias de uso,
 #deve-se fazer o produto entre o preço por quilometro e distância, e somar com o produto entre o preço por dia e dias rodados.
 # Assim:
 def rentcar(km,d):
     return km*0.15 + d*60
 
-#Questão 4
+#Questão 4:
 #Para calcular a área sombreada será usada a seguinte ideia: 
 # fazer o cáuculo da área do quadrado e subtrair 4 vezez meia pétala de circunferencia, que é a área representada pelas partes em branco da figura.
 #Será usado a biblioteca math para usar alguns recursos.
@@ -55,4 +55,32 @@ def area2(l):
         return (((x/2)**2)*((pi/2)-1))/2
     
     return Aquad(l)-2*ApetCircun(diagQuad(l))
+#Questão 5:
+#1º passo) Verificar se i e f estão no intervalo de 1 a 366 e se f é maior que i.
+#2º passo) Verificar se d está entre i e f;
+#           Se for verdadeiro, retornar o valor e;
+#           Se for falson retorna o valor 0.
+
+def evento(ag,d):
+    (e,i,f) = ag
+    if i>=1 and i<=366 and f>i and f<=366:
+        if d>=i and d<=f : return e
+        else : return 0
+    else : return 0
+
+
+#Questão 6:
+#1º passo) Fazer as somas possiveis;
+#2º passo) Verificar quais somas deram como resultado um valor multiplo de 5;
+#           Se algum valor for multiplo de 5, a função retorna esee valor;
+#           Se não, retornar o valor 0.
+
+def pontos(p1,p2):
+    (a,b)=p1
+    (c,d)=p2
+    if (a+c)%5== 0 : return (a+c)
+    elif (a+d)%5 == 0 : return (a+d)
+    elif (b+c)%5 == 0 : return (b+c)
+    elif (b+d)%5 == 0 : return (b+d)
+    else : return 0    
 
